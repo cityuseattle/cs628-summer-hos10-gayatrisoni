@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import Navbar from "./navbar";
  
 export default function Create() {
  const [form, setForm] = useState({
@@ -23,7 +24,7 @@ export default function Create() {
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
  
-   await fetch("https://supreme-space-dollop-65v4r44x454cxqpw-5050.app.github.dev/record", {
+   await fetch("https://psychic-funicular-grx7577v5gr29pp4-5050.app.github.dev/record", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
@@ -42,6 +43,7 @@ export default function Create() {
  // This following section will display the form that takes the input from the user.
  return (
    <div>
+    <Navbar />
      <h3>Create New Record</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
